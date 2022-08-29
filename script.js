@@ -8,15 +8,15 @@ class Calculator {
     clear() {
         this.previousOperand = '';
         this.currentOperand = '';
-        this.operation = '';
+        this.operation = undefined;
     }
 
     delete() {
 
     }
 
-    appendNumber() {
-
+    appendNumber(number) {
+        this.currentOperand = number;
     }
 
     chooseOperation() {
@@ -28,7 +28,7 @@ class Calculator {
     }
 
     updateDisplay() {
-        
+        this.currentOperandTextElement.innerText = this.currentOperand;
     }
 }
 
@@ -40,8 +40,8 @@ const operationButtons = document.querySelectorAll('[data-operation]');
 const equalsButton = document.querySelector('[data-equals]');
 const deleteButton = document.querySelector('[data-delete]');
 const allClearButton = document.querySelector('[data-all-clear]');
-const previousOperandButton = document.querySelector('[data-previous-operand]');
-const currentOperandButton = document.querySelector('[data-current-operand]');
+const previousOperandTextElement = document.querySelector('[data-previous-operand]');
+const currentOperandTextElement = document.querySelector('[data-current-operand]');
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
 
