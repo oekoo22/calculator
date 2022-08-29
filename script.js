@@ -26,6 +26,10 @@ class Calculator {
     compute() {
 
     }
+
+    updateDisplay() {
+        
+    }
 }
 
 
